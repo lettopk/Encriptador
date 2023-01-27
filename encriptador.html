@@ -22,11 +22,11 @@
             
             
             <div class="caja" >
-                <p class="encriptado"></p>
+                <p class="encriptado" id="textEncriptado" contenteditable="true"></p>
                 <h1 id="imagenEncriptador"><img src="imagenes/Muñecopersonaje.png" alt="Personaje"></h1>
                 
                 <p id="sugerencia">Ingresa el texto que deseas encriptar o desencriptar</p>
-                <input type="submit" value="Copiar" class="copiar">
+                <input type='submit' value="Copiar" class="copiar">
             </div>
 
             <div class="alerta">
@@ -110,7 +110,16 @@
     }
     //Copiado
     function copiar (){
-         textoEncriptado = document.execCommand("copy");
+
+            var copyText = document.getElementById("textEncriptado");
+            // Select the text field
+            copyText.select;
+            // Copy the text inside the text field
+            navigator.clipboard.writeText(copyText.textContent);
+            // Alert the copied text
+            alert("Copied the text: " + copyText.textContent);
+            
+
     }
 
 
