@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Encriptador</title>
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <header>
+            
+        </header>
+        
+        <main>
+            <div class="logo">
+                <h1><img src="imagenes/Vectorlogo.png" alt="logoAlura"></h1>
+            </div>
+
+            
+                <input type="text" class="input-texto" placeholder="Inserte texto aquí">
+            
+            
+            <div class="caja" >
+                <p class="encriptado"></p>
+                <h1 id="imagenEncriptador"><img src="imagenes/Muñecopersonaje.png" alt="Personaje"></h1>
+                
+                <p id="sugerencia">Ingresa el texto que deseas encriptar o desencriptar</p>
+                <input type="submit" value="Copiar" class="copiar">
+            </div>
+
+            <div class="alerta">
+                <img src="imagenes/bi_exclamation-circle-fill.png" alt="!">
+                <p>Solo letras minusculas y sin acento</p>
+            </div>
+            <div class="botones">
+                
+                <input type="submit" value="Encriptar" class="encriptar">
+                <input type="submit" value="Desencriptar" class="desencriptar">
+            </div>
+
+        </main>
+
+        <footer>
+            <p class="copyright">&copy Copyright Marlon Tarazona - 2023</p>
+        </footer>
+    </body>
+</html>
+
+<script>
+    
+    const inputTexto = document.querySelector('.input-texto');
+    const textoEncriptado = document.querySelector('.encriptado');
+
+    const botonEncriptar = document.querySelector('.encriptar');
+    const botonDesencriptar = document.querySelector('.desencriptar');
+    const botoncopiar = document.querySelector('.copiar');
+
+    botoncopiar.hidden = true;
+
+    //Encriptado
+
+    function botonEncriptado (){
+        const resultadoEncriptado = textoEncriptar(inputTexto.value);
+        document.getElementById("imagenEncriptador").style.display = "none";
+        document.getElementById("sugerencia").style.display = "none";
+        textoEncriptado.textContent = resultadoEncriptado;
+        botoncopiar.hidden = false;
+        inputTexto.value ="";
+    }
+
+    function textoEncriptar (stringEncriptar){
+        /* La letra "e" es convertida para "enter"
+        La letra "i" es convertida para "imes"
+        La letra "a" es convertida para "ai"
+        La letra "o" es convertida para "ober"
+        La letra "u" es convertida para "ufat"*/
+
+        let matrizCodigo = [["e", "enter"], ["i", "imes"], ["a", "ai"], ["o", "ober"], ["u", "ufat"]];
+        stringEncriptar = stringEncriptar.toLowerCase();
+
+        for (let i = 0; i < matrizCodigo.length; i++){
+            if (stringEncriptar.includes(matrizCodigo[i][0])){
+                stringEncriptar =stringEncriptar.replaceAll(matrizCodigo[i][0],matrizCodigo[i][1]);
+            }
+            
+        }
+        return stringEncriptar;
+    }
+
+    //Desencriptado
+    function botonDesencriptado (){
+        const resultadodesencriptado = textoDesencriptar(inputTexto.value);
+        textoEncriptado.textContent = resultadodesencriptado;
+        inputTexto.value ="";
+    }
+
+    function textoDesencriptar (stringdesencriptar){
+
+        let matrizCodigo = [["e", "enter"], ["i", "imes"], ["a", "ai"], ["o", "ober"], ["u", "ufat"]];
+        stringdesencriptar = stringdesencriptar.toLowerCase();
+
+        for (let i = 0; i < matrizCodigo.length; i++){
+            if (stringdesencriptar.includes(matrizCodigo[i][1])){
+                stringdesencriptar = stringdesencriptar.replaceAll(matrizCodigo[i][1],matrizCodigo[i][0]);
+            }
+            
+        }
+        return stringdesencriptar;
+    }
+    //Copiado
+    function copiar (){
+         textoEncriptado = document.execCommand("copy");
+    }
+
+
+    botonEncriptar.addEventListener('click', botonEncriptado);
+    botonDesencriptar.addEventListener('click', botonDesencriptado);
+    botoncopiar.addEventListener('click', copiar);
+    
+
+</script>

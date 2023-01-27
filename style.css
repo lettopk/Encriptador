@@ -1,0 +1,119 @@
+
+main {
+    width: 100%;
+    height: 700px;
+    background: #F3F5FC;
+}
+.logo{
+    padding: 3% 6%;
+}
+.input-texto{
+    display: inline;
+    border: hidden;
+    background: #F3F5FC;
+    margin-left: 16%;
+    font-family: 'Inter';
+    font-style: normal;
+    font-size: 32px;
+    color: #0A3871;
+}
+
+.caja {
+    position: absolute;
+    width: 26%;
+    height: 80%;
+    left: 66%;
+    top: 40px;
+    
+        /* White */
+    background: #FFFFFF;
+    
+        /* shadow */
+    box-shadow: -20px 24px 20px -20px rgba(0, 0, 0, 0.8);
+    border-radius: 32px;
+}
+
+.caja img{
+    width: 70%;
+    margin-top: 20%;
+    margin-left: 15%;
+}
+
+.caja p{
+    font-family: 'Inter';
+    font-style: normal;
+    font-size: 24px;
+    color: #0A3871;
+    text-align: center;
+    padding: 3%;
+    margin-top: 10%;
+}
+
+.caja p:last-child{
+    margin-top: 1%;
+    font-family: 'Inter';
+    font-style: normal;
+    font-size: 24px;
+    color: #495057;
+    text-align: center;
+    padding: 3%;
+}
+
+.alerta{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    
+    position: relative;
+    width: auto;
+    left: 16%;
+    margin-top: 25%;
+}
+
+.botones{
+    display: block;
+    position: relative;
+    left: 16%;
+    top: 1%;
+}
+.encriptar {
+    width: 20%;
+    height: 67px;
+    
+    background: #0A3871;
+    border-radius: 24px;
+    
+    color: #D8DFE8;
+    
+}
+.desencriptar{
+    width: 20%;
+    height: 67px;
+   
+    background: #D8DFE8;
+    
+    border: 1px solid #0A3871;
+    border-radius: 24px;
+
+    color: #0A3871;
+    
+}
+.copiar{
+    
+    width: 50%;
+    height: 67px;
+    margin-top: 50%;
+    margin-left: 25%;
+    
+    background: #0A3871;
+    border-radius: 24px;
+    
+    color: #D8DFE8;
+}
+footer {
+    text-align: center;
+    background-image: url(../HTML5-CCS/parte2-posicionamientoListasyNavegacion/imagenes/bg.jpg);
+    padding: 40px;
+    color: #D8DFE8;
+}
