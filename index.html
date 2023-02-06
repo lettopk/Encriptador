@@ -13,32 +13,36 @@
         </header>
         
         <main>
-            <div class="logo">
-                <h1><img src="imagenes/Vectorlogo.png" alt="logoAlura"></h1>
-            </div>
-
-            
+            <div class="fondo">
+                
+                <div class="logo">
+                    <h1><img src="imagenes/Vectorlogo.png" alt="logoAlura"></h1>
+                </div>
+                
+                
                 <input type="text" class="input-texto" placeholder="Inserte texto aquí">
-            
-            
-            <div class="caja" >
-                <p class="encriptado" id="textEncriptado" contenteditable="true"></p>
-                <h1 id="imagenEncriptador"><img src="imagenes/Muñecopersonaje.png" alt="Personaje"></h1>
                 
-                <p id="sugerencia">Ingresa el texto que deseas encriptar o desencriptar</p>
-                <input type='submit' value="Copiar" class="copiar">
-            </div>
-
-            <div class="alerta">
-                <img src="imagenes/bi_exclamation-circle-fill.png" alt="!">
-                <p>Solo letras minusculas y sin acento</p>
-            </div>
-            <div class="botones">
                 
-                <input type="submit" value="Encriptar" class="encriptar">
-                <input type="submit" value="Desencriptar" class="desencriptar">
-            </div>
+                <div class="caja">
+                    <p class="encriptado" id="textEncriptado" contenteditable="true"></p>
+                    <h1 id="imagenEncriptador"><img src="imagenes/Muñecopersonaje.png" alt="Personaje"></h1>
+                
+                    <p id="sugerencia">Ingresa el texto que deseas encriptar o desencriptar</p>
+                    <input type='submit' value="Copiar" class="copiar">
+                </div>
+                
+                <div class="alerta">
+                    <img src="imagenes/bi_exclamation-circle-fill.png" alt="!">
+                    <p>Solo letras minusculas y sin acento</p>
+                </div>
+                <div class="botones">
+                
+                    <input type="submit" value="Encriptar" class="encriptar">
+                    <input type="submit" value="Desencriptar" class="desencriptar">
+                </div>
 
+            </div>
+            
         </main>
 
         <footer>
@@ -117,7 +121,7 @@
             // Copy the text inside the text field
             navigator.clipboard.writeText(copyText.textContent);
             // Alert the copied text
-            alert("Copied the text: " + copyText.textContent);
+            alert("Texto copiado: " + copyText.textContent);
             
 
     }

@@ -2,7 +2,9 @@
 main {
     width: 100%;
     height: 700px;
-    background: #F3F5FC;
+}
+.fondo{
+    background-image: url(/imagenes/map2.png);
 }
 .logo{
     padding: 3% 6%;
